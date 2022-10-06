@@ -114,3 +114,31 @@ SELECT profesor.nombre,profesor.carrera,taller.nombre
 FROM profesor JOIN taller
 ON profesor.idProfesor=taller.idProfesor
 WHERE profesor.programa="CiberEscuela"
+
+SELECT P.nombre,P.apellidoM,P.apellidoP,P.programa,P.escolaridad,P.carrera
+FROM profesor as P
+LIMIT 10;
+
+SELECT P.nombre,P.apellidoM,P.apellidoP,T.nombre
+FROM profesor as P left JOIN taller as T
+ON P.idProfesor = T.idProfesor
+LIMIT 10;
+
+SELECT P.nombre,P.apellidoM,P.apellidoP,T.nombre,T.salon
+FROM profesor as P left JOIN taller as T
+ON P.idProfesor = T.idProfesor
+LIMIT 10;
+
+SELECT T.nombre,T.capacidad,P.nombre
+FROM taller as T
+LEFT JOIN profesor AS P
+ON P.idProfesor = T.idProfesor;
+
+SELECT T.nombre,P.carrera,P.nombre
+FROM taller as T
+left join profesor as P
+ON  T.idTaller = T.idProfesor
+WHERE P.programa= "ciberescuela"
+
+
+
